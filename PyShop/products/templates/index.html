@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  {% extends 'base.html' %} {% block content %}
+  <h1>Products</h1>
+  <div class="row">
+    {% for product in products %}
+    <div class="col">
+      <div class="card" style="width: 18rem">
+        <img
+          src=" {{ product.image_url }} "
+          class="card-img-top"
+          alt="{{ product.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">₹{{ product.price }}</p>
+          <a href="#Added" class="btn btn-primary">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endblock %}
+</html>
